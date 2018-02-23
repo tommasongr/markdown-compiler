@@ -1,0 +1,15 @@
+{
+  "name": "atosa-products2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Tommaso Negri <tommaso.negri98@gmail.com> (tommasonegri.com)",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.0.11",
+    "moment": "^2.20.1"
+  }
+}

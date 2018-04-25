@@ -2,9 +2,12 @@
 code: {{code}}
 name: {{name}}
 layout: {{layout}}
+title: Atosa Italy - {{name}}
 date: {{currentDate}}
+line: {{line}}
 published: true
 img: /assets/img/products/thumbs/{{img}}.jpg
+socialImage: /assets/img/products/thumbs/{{img}}.jpg
 family: {{family}}
 offers: false
 permalink: /products/{{line}}/{{permalink}}/:title/
@@ -12,9 +15,9 @@ permalink: /products/{{line}}/{{permalink}}/:title/
 [//]: # (ADDITIONAL)
 
 energy: '{{#ifvalue energy value='SI'}}/assets/img/products/energy/{{line}}/EEI--{{code}}.png{{/ifvalue}}'
-cadDraw: '/assets/img/products/cad/{{code}}.pdf'
-exploded: '{{#ifvalue exploded value='SI'}}/assets/img/products/exploded/{{code}}.pdf{{/ifvalue}}'
-dataSheet: '{{#ifvalue dataSheet value='SI'}}/assets/img/products/data/{{code}}.pdf{{/ifvalue}}'
+cadDraw: '{{#ifvalue cadDraw value='SI'}}/assets/img/products/cad/{{code}}.pdf{{/ifvalue}}'
+exploded: '{{#ifvalue exploded value='SI'}}/assets/img/products/exploded/{{line}}/{{code}}.pdf{{/ifvalue}}'
+dataSheet: '{{#ifvalue dataSheet value='SI'}}/assets/img/products/data/{{line}}/{{code}}.pdf{{/ifvalue}}'
 ---
 
 
@@ -35,6 +38,6 @@ dataSheet: '{{#ifvalue dataSheet value='SI'}}/assets/img/products/data/{{code}}.
 {: .info-specs-table}
 
 {{#ifvalue alzatina value='SI'}}
-"Disponibile in versione con Alzatina: EPF3421A"
+"Disponibile in versione con Alzatina: {{code}}A"
 {: .extra-notes}
 {{/ifvalue}}

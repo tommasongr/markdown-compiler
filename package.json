@@ -1,15 +1,16 @@
 {
-  "name": "atosa-products2",
+  "name": "markdown-compiler",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An easy and fast Markdown compiler from JSON written in NodeJS",
+  "main": "app.js",
   "scripts": {
     "start": "node app"
   },
   "author": "Tommaso Negri <tommaso.negri98@gmail.com> (tommasonegri.com)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "handlebars": "^4.0.11",
-    "moment": "^2.20.1"
-  }
+    "handlebars": "^4.0.12",
+    "moment": "^2.23.0"
+  },
+  "repository": "https://github.com/tommaso-negri/markdown-compiler.git"
 }

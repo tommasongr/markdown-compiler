@@ -1,106 +1,173 @@
-var fs = require('fs');
-var hbs = require('handlebars');
-var moment = require('moment');
+let fs = require('fs')
+let hbs = require('handlebars')
+let moment = require('moment')
 
 // Get content from file
-var content = fs.readFileSync('products.json');
+let content = fs.readFileSync('content.json')
 
 // Define to JSON type
-var jsonContent = JSON.parse(content);
+let jsonContent = JSON.parse(content)
 
 // Get current date using momentJs
-var currentDate = moment().format('YYYY-MM-DD');
+let currentDate = moment().format('YYYY-MM-DD')
 
 console.log('\nWriting Files...\n')
 
 // Set the if statement for Handlebars
 hbs.registerHelper('ifvalue', function(conditional, options) {
     if(options.hash.value === conditional) {
-        return options.fn(this);
+        return options.fn(this)
     } else {
-        return options.inverse(this);
+        return options.inverse(this)
     }
-});
+})
 
-// Compiling Red Products
-
+// Check / Create directory function
 function checkDirectory(directory, callback) {
     fs.stat(directory, function(err, stats){
         if (err && err.errno === 34) {
-            fs.mkdir(directory, callback);
+            fs.mkdir(directory, callback)
         } else {
             callback(err)
         }
-    });
+    })
 }
 
+// Looking for Results directory
 checkDirectory("./results/", function(error) {  
     if(error) {
-        console.log("Creating Directory Results...");
-        fs.mkdirSync('./results/');
+        console.log("Creating Directory Results...")
+        fs.mkdirSync('./results/')
     } else {
         //Carry on, all good, directory exists / created.
     }
-});
+})
 
-checkDirectory("./results/red/", function(error) {  
+
+
+/* *********** HACKING NEEDED HERE *********** //
+
+Copy and paste the code below and hack it accordingly
+to your needs. It will create a sub-directory
+
+checkDirectory("./results/SUBDIR-NAME/", function(error) {  
     if(error) {
-        console.log("Creating Directory Red...");
-        fs.mkdirSync('./results/red/');
+        console.log("Creating Directory SUBDIR-NAME...")
+        fs.mkdirSync('./results/red/')
     } else {
         //Carry on, all good, directory exists / created.
     }
-});
+})
 
-checkDirectory("./results/green/", function(error) {  
+// **************************************** */
+
+
+
+// Looking for sub-directory 1
+checkDirectory("./results/EXAMPLE1/", function(error) {  
     if(error) {
-        console.log("Creating Directory Green...\n");
-        fs.mkdirSync('./results/green/');
+        console.log("Creating Directory EXAMPLE1...")
+        fs.mkdirSync('./results/EXAMPLE1/')
     } else {
         //Carry on, all good, directory exists / created.
     }
-});
+})
 
+// Looking for sub-directory 2
+checkDirectory("./results/EXAMPLE2/", function(error) {  
+    if(error) {
+        console.log("Creating Directory EXAMPLE2...")
+        fs.mkdirSync('./results/EXAMPLE2/')
+    } else {
+        //Carry on, all good, directory exists / created.
+    }
+})
+
+
+
+/* *********** HACKING NEEDED HERE *********** //
+
+You have to fill the code inside each setTimeout function
+with your data, fields, etc
+
+You can also copy and paste the same block each time you need
+
+// **************************************** */
+
+
+
+// Writing Files
 setTimeout(() => {
-    for (let i = 0; i < jsonContent['products-red'].length; i++) {
 
-        var source = fs.readFileSync('tpl/productTpl.md', 'utf8');
-    
-        var template = hbs.compile(source);
-    
-        var data = { 'code': jsonContent['products-red'][i].code, 'name': jsonContent['products-red'][i].name, 'line': jsonContent['products-red'][i].line, 'layout': jsonContent['products-red'][i].layout, 'currentDate': currentDate, 'img': jsonContent['products-red'][i].img, 'family': jsonContent['products-red'][i].family, 'line': jsonContent['products-red'][i].line, 'permalink': jsonContent['products-red'][i].permalink, 'energy': jsonContent['products-red'][i].energy, 'cadDraw': jsonContent['products-red'][i].cadDraw, 'exploded': jsonContent['products-red'][i].exploded, 'dataSheet': jsonContent['products-red'][i].dataSheet, 'dimensioni': jsonContent['products-red'][i].dimensioni, 'dimensioniInterne': jsonContent['products-red'][i].dimensioniInterne, 'griglieIncluse': jsonContent['products-red'][i].griglieIncluse, 'capacità': jsonContent['products-red'][i].capacità, 'pesoNetto': jsonContent['products-red'][i].pesoNetto, 'amperaggio': jsonContent['products-red'][i].amperaggio, 'consumo': jsonContent['products-red'][i].consumo, 'compressore': jsonContent['products-red'][i].compressore, 'modelloCompressore': jsonContent['products-red'][i].modelloCompressore, 'termostato': jsonContent['products-red'][i].termostato, 'modelloTermostato': jsonContent['products-red'][i].modelloTermostato, 'gasRefrigerante': jsonContent['products-red'][i].gasRefrigerante, 'temperatura': jsonContent['products-red'][i].temperatura, 'spessoreCoibentazione': jsonContent['products-red'][i].spessoreCoibentazione, 'alzatina': jsonContent['products-red'][i].alzatina};
-    
-        var result = template(data);
-    
-        fs.writeFile('results/red/' + jsonContent['products-red'][i].code + '.md', result, 'utf8', function(err){
+    let jsonData = jsonContent['EXAMPLE1']
+
+    for (let i = 0; i < jsonData.length; i++) {
+
+        let source = fs.readFileSync('template/markdownTemplate.md', 'utf8')
+
+        let template = hbs.compile(source)
+
+        let data = {
+            'name': jsonData[i].name,
+            'subtitle': jsonData[i].subtitle,
+            'id': jsonData[i].id,
+            'coverIMG': jsonData[i].coverIMG,
+            'collection': jsonData[i].collection,
+            'currentDate': currentDate,
+            'published': jsonData[i].published,
+            'layout': jsonData[i].layout,
+            'content': jsonData[i].content,
+            'ifExample': jsonData[i].ifExample
+        }
+
+        let result = template(data);
+
+        fs.writeFile('results/EXAMPLE1/' + jsonData[i].name + '.md', result, 'utf8', function(err){
             if(err) {
-                return console.log(err);
+                return console.log(err)
+            }
+        })
+
+        console.log('Writing EXAMPLE1... ' + jsonData[i].name + '.md')
+
+    }
+
+}, 100)
+
+// Writing Files
+setTimeout(() => {
+
+    let jsonData = jsonContent['EXAMPLE2']
+
+    for (let i = 0; i < jsonData.length; i++) {
+
+        let source = fs.readFileSync('template/markdownTemplate.md', 'utf8')
+
+        let template = hbs.compile(source)
+
+        let data = {
+            'name': jsonData[i].name,
+            'subtitle': jsonData[i].subtitle,
+            'id': jsonData[i].id,
+            'coverIMG': jsonData[i].coverIMG,
+            'collection': jsonData[i].collection,
+            'currentDate': currentDate,
+            'published': jsonData[i].published,
+            'layout': jsonData[i].layout,
+            'content': jsonData[i].content,
+            'ifExample': jsonData[i].ifExample
+        }
+
+        let result = template(data)
+
+        fs.writeFile('results/EXAMPLE2/' + jsonData[i].name + '.md', result, 'utf8', function(err){
+            if(err) {
+                return console.log(err)
             }
         });
-    
-        console.log('Writing RED... ' + jsonContent['products-red'][i].code + '.md')
-    
-    };
-    
-    // Compiling Green Products
-    
-    for (let i = 0; i < jsonContent['products-green'].length; i++) {
-    
-        var source = fs.readFileSync('tpl/productTpl.md', 'utf8');
-    
-        var template = hbs.compile(source);
-    
-        var data = { 'code': jsonContent['products-green'][i].code, 'name': jsonContent['products-green'][i].name, 'line': jsonContent['products-green'][i].line, 'layout': jsonContent['products-green'][i].layout, 'currentDate': currentDate, 'img': jsonContent['products-green'][i].img, 'family': jsonContent['products-green'][i].family, 'line': jsonContent['products-green'][i].line, 'permalink': jsonContent['products-green'][i].permalink, 'energy': jsonContent['products-green'][i].energy, 'cadDraw': jsonContent['products-green'][i].cadDraw, 'exploded': jsonContent['products-green'][i].exploded, 'dataSheet': jsonContent['products-green'][i].dataSheet, 'dimensioni': jsonContent['products-green'][i].dimensioni, 'dimensioniInterne': jsonContent['products-green'][i].dimensioniInterne, 'griglieIncluse': jsonContent['products-green'][i].griglieIncluse, 'capacità': jsonContent['products-green'][i].capacità, 'pesoNetto': jsonContent['products-green'][i].pesoNetto, 'amperaggio': jsonContent['products-green'][i].amperaggio, 'consumo': jsonContent['products-green'][i].consumo, 'compressore': jsonContent['products-green'][i].compressore, 'modelloCompressore': jsonContent['products-green'][i].modelloCompressore, 'termostato': jsonContent['products-green'][i].termostato, 'modelloTermostato': jsonContent['products-green'][i].modelloTermostato, 'gasRefrigerante': jsonContent['products-green'][i].gasRefrigerante, 'temperatura': jsonContent['products-green'][i].temperatura, 'spessoreCoibentazione': jsonContent['products-green'][i].spessoreCoibentazione, 'alzatina': jsonContent['products-green'][i].alzatina};
-    
-        var result = template(data);
-    
-        fs.writeFile('results/green/' + jsonContent['products-green'][i].code + '.md', result, 'utf8', function(err){
-            if(err) {
-                return console.log(err);
-            }
-        });
-    
-        console.log('Writing GREEN... ' + jsonContent['products-green'][i].code + '.md')
-    
-    };
-}, 100);
+
+        console.log('Writing EXAMPLE2... ' + jsonData[i].name + '.md')
+
+    }
+
+}, 100)

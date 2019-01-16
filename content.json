@@ -1,0 +1,72 @@
+{
+  "EXAMPLE1": [
+    {
+      "name": "Product 1",
+      "subtitle": "Lorem Ipsum Dolor Sit Amet",
+      "id": "XB2K001",
+      "coverIMG": "img-test-1",
+      "collection": "example1",
+      "published": true,
+      "layout": "product",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla",
+      "ifExample": true
+    },
+    {
+      "name": "Product 2",
+      "subtitle": "Lorem Ipsum Dolor Sit Amet",
+      "id": "XB2K002",
+      "coverIMG": "img-test-2",
+      "collection": "example1",
+      "published": true,
+      "layout": "product",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla",
+      "ifExample": false
+    },
+    {
+      "name": "Product 3",
+      "subtitle": "Lorem Ipsum Dolor Sit Amet",
+      "id": "XB2K003",
+      "coverIMG": "img-test-3",
+      "collection": "example1",
+      "published": false,
+      "layout": "product",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla",
+      "ifExample": true
+    }
+  ],
+  "EXAMPLE2": [
+    {
+      "name": "News 1",
+      "subtitle": "Lorem Ipsum Dolor Sit Amet",
+      "id": "KW3D010",
+      "coverIMG": "img-test-4",
+      "collection": "example2",
+      "published": false,
+      "layout": "news",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla",
+      "ifExample": false
+    },
+    {
+      "name": "News 2",
+      "subtitle": "Lorem Ipsum Dolor Sit Amet",
+      "id": "KW3D020",
+      "coverIMG": "img-test-5",
+      "collection": "example2",
+      "published": false,
+      "layout": "news",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla",
+      "ifExample": false
+    },
+    {
+      "name": "News 3",
+      "subtitle": "Lorem Ipsum Dolor Sit Amet",
+      "id": "KW3D030",
+      "coverIMG": "img-test-6",
+      "collection": "Example 3",
+      "published": false,
+      "layout": "news",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla",
+      "ifExample": false
+    }
+  ]
+}

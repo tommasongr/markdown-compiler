@@ -6,7 +6,7 @@ This small code can be really helpful with your static website or similar projec
 **Easy and Frictionless**
 
 ## Instructions
-Before to get starting you will have to configure your own version of the generator.
+Before to get started you have to configure your own version of the generator.
 
 The files you might have to change are:
 

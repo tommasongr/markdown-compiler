@@ -9,7 +9,7 @@
   "author": "Tommaso Negri <tommaso.negri98@gmail.com> (tommasonegri.com)",
   "license": "MIT",
   "dependencies": {
-    "handlebars": "^4.0.12",
+    "handlebars": "^4.1.2",
     "moment": "^2.23.0"
   },
   "repository": "https://github.com/tommaso-negri/markdown-compiler.git"
